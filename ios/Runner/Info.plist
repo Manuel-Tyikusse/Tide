@@ -51,5 +51,19 @@
 	<string>Esta aplicação precisa de acesso ao microfone para gravar áudio para os seus vídeos.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Esta aplicação precisa de acesso à sua galeria para selecionar fotos e vídeos para partilhar.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>Esta aplicação precisa de acesso à sua galeria para selecionar fotos e vídeos para partilhar.</string>
+
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>tideapp</string>
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>

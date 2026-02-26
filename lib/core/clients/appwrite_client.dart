@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:tide/core/clints/appwrite_client.dart';
+import 'package:appwrite/appwrite.dart';
 import 'package:tide/core/config/environment.dart';
 import 'dart:developer' as developer;
 
