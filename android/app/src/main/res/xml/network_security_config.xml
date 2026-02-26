@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Configuração para builds de produção/release -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Configuração específica para o domínio Supabase (para garantir) -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">hyotkpxpwzqcvbmjwyyp.supabase.co</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+
+    <!-- Configuração para builds de debug (permite certificados de usuário para proxies) -->
+    <debug-overrides>
+        <base-config cleartextTrafficPermitted="true">
+            <trust-anchors>
+                <certificates src="system" />
+                <certificates src="user" />
+            </trust-anchors>
+        </base-config>
+    </debug-overrides>
+</network-security-config>
