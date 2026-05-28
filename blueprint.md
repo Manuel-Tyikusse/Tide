@@ -38,7 +38,7 @@ A aplicação segue uma arquitetura limpa, com uma clara separação de responsa
 
 - **`lib/core/clients/`**: Contém os clientes centralizados que comunicam com os backends:
     - **`TideClient` (`supabase_client.dart`)**: Ponto de acesso único para todas as operações do Supabase. Contém a lógica de negócio para autenticação, gestão de posts, perfis, chats, etc. Expõe métodos simples como `signIn()`, `createPost()`, `getPosts()`, etc.
-    - **`AppwriteClient` (`appwrite_client.dart`)**: Responsável exclusivamente por fazer o upload de vídeos para o Appwrite Storage.
+    - **`AppwriteClient` (`appwrite_client.dart`)**: Responsável exclusivamente por fazer o upload de vídeos para o Appwrite Storage. Nota: ##Não está a funcionar
 
 - **`lib/core/services/`**: Contém serviços que orquestram a lógica entre a UI e os clientes:
     - **`MediaService`**: Abstrai a complexidade do upload de mídia. Recebe um ficheiro e, com base na sua extensão, decide se deve usar o `TideClient` (para imagens) ou o `AppwriteClient` (para vídeos), retornando a URL final.
@@ -46,7 +46,7 @@ A aplicação segue uma arquitetura limpa, com uma clara separação de responsa
 
 - **`lib/features/`**: Os módulos de UI da aplicação (Auth, Feed, Câmera, Chat, etc.) que dependem dos serviços e clientes do diretório `core` para executar ações, mantendo a UI limpa de lógica de negócio complexa.
 
-## 4. Funcionalidades Implementadas (Ciclo Completo)
+## 4. Funcionalidades Implementadas (implementada)
 
 - **Configuração do Projeto**: As dependências (`supabase_flutter`, `appwrite`, `camera`, etc.) e as credenciais de ambiente foram configuradas.
 
@@ -55,7 +55,7 @@ A aplicação segue uma arquitetura limpa, com uma clara separação de responsa
     - A estrutura no Appwrite foi definida.
 
 - **Arquitetura de Cliente Centralizada**:
-    - `TideClient` e `AppwriteClient` foram implementados e estão a ser usados em toda a aplicação.
+    - `TideClient` e `AppwriteClient` foram implementados e estão a ser usados em toda a aplicação.  ##Nota: O appwrite não está a funcionar
 
 - **Fluxo de Autenticação (Login/Registo)**:
     - A `LoginScreen` foi refatorada para usar `TideClient.signIn()` e `TideClient.signUp()`, centralizando a lógica de autenticação.
